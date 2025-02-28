@@ -1,0 +1,322 @@
+/* Humanrace-Inspired NutriGuard Layout */
+
+:root {
+  --primary-color: #000000;  /* Black */
+  --secondary-color: #737373; /* Dark Gray */
+  --background-color: #ffffff; /* White */
+  --text-color: #212121;      /* Very Dark Gray */
+  --light-text-color: #000000; /* Black */
+  --accent-color: #d4d4d4;    /* Light Gray */
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Header and Navigation */
+header {
+  background-color: var(--background-color);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--light-text-color);
+}
+
+.hero h1,
+.hero p {
+  color: var(--primary-color); /* Keep the text black */
+  text-shadow: none; /* Remove the shadow */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white; /*Ensure the text is visible*/
+  border-radius: 0; /* Sharp edges */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease; color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-color);
+  color: white; /* Keep the text visible when hovering */
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.step img {
+  max-width: 150%;  /* Increased size of image */
+  height: auto;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.step-icon {
+    width: 100px;  /* Larger size */
+    height: auto;
+    margin-bottom: 0.5rem; /* Spacing before Step 1 */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect for Image */
+.step img:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+/* Features Section */
+.features {
+  padding: 6rem 0;
+  background-color: var(--accent-color);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.features li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--primary-color);
+  border-radius: 50%; /* Circular bullets */
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+}
+
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.testimonial-content {
+  flex: 1;
+  font-style: italic;
+  color: var(--secondary-color);
+  text-align: center; /* Center the text */
+}
+
+/* Signup Section */
+.signup {
+  padding: 6rem 0;
+  background-color: var(--light-text-color);
+  text-align: center;
+  border-top: 1px solid var(--accent-color);
+}
+
+.signup h2 {
+  color: var(--primary-color);
+}
+
+.signup form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.signup input[type="email"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+  width: 300px;
+}
+
+.signup button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white; /* Changed from var(--light-text-color) */
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup button:hover {
+  background-color: var(--secondary-color);
+  color: white; /* Keep text visible on hover */
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+
+  .signup form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup input[type="email"] {
+    width: 100%;
+    max-width: none;
+  }
+}
+
